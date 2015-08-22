@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div >
+            <!--            <form action="UploadServlet" method="POST" enctype="multipart/form-data">            
+                            <input type="file" name="uploadInput"/>
+                            <input type="submit" value="ارسال"/>
+                        </form>-->
+            <!--<div id="LoginTab" >-->
+            Admin Login
+            <form action="Server" method="get" id="adminLoginForm">
+                email:
+                <input name="user_email" id="user_email" type="text" />
+                <br/>
+                pass :
+                <input name="user_pass" id="user_pass" type="text" />
+                <br/>
+                <input type="button" name="do" value="Access_User.login" onclick="myFunction();
+                        alert(1);
+                        return false;">
+                <br>
+                <span>
+                    ارسال اس ام اس
+                </span>
+
+                <!--                <input type="button" value="Access_User.login" onclick="myFunction();
+                                        alert(1);
+                                        return false;">-->
+            </form>
+<!--            <form action="Server" method="GET">
+                <input type="text" name="smsText">
+                <input type="submit" name="do" value="App.sendSMS" >
+            </form>-->
+        </div>
+        <div id="TrIdInUserForm" style="display: none">
+            خوش آمدید
+        </div>
+        <div id="ProductTab" style="display: none">
+            صفحه محصولات
+        </div>
+        <div id="ProductTab1" style="display: none">
+            صفحه محصولات1
+        </div>
+        <div id="ProductTab2" style="display: none">
+            صفحه محصولات2
+        </div>
+        <div id="ProductTab3" style="display: none">
+            صفحه محصولات3
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <div id="UserTab" style="display: none">
+            قسمت کاربران
+        </div>
+        <div id="UserTab1" style="display: none">
+            قسمت کاربران 1 
+        </div>
+        <div id="UserTab2" style="display: none">
+            قسمت کاربران2
+        </div>
+
+        <br/>
+        <br/>
+        <br/>
+        <!--        AJAX UPLOAD
+                <div >
+                    تصویر اصلی
+                    <div >
+                        <a>
+                            <img id="preview_portalPost_pic1" alt="..." src="img/preview.jpg">
+                        </a>
+                    </div>
+                    <input id="upload_portalPost_pic1" type="file" name="upload_portalPost_pic1"/>
+                    <input id="portal_post_pic1" type="hidden" style="width: 200px" name="portal_post_pic1"/>
+                    <input type="button" id="upload_btn_portalPost_pic1">
+                    ارسال تصویر 
+                    </a>   
+                </div>-->
+        <!--<link rel="stylesheet" type="text/css" href="css/jquery/blue2/jquery-ui-1.8.21.custom.css" />-->
+        <!--<script type="text/javascript" src="js/jquery/jquery-ui-1.8.21.custom.min.js" ></script>-->
+        <script type="text/javascript" src="js/jquery/jquery-1.7.2.min.js" ></script>
+        <!--<script type="text/javascript" src="js/jquery/ajaxfileupload.js" ></script>-->
+        <script type="text/javascript" src="js/jj2.js" ></script>
+        <!--<script type="text/javascript" src="js/index.js" ></script>-->
+        <script>
+                    function myFunction() {
+                        var user = $("#user_email").val();
+                        var pass = $("#user_pass").val();
+                        new jj("do=Access_User.login&user_email=" + user + "&user_pass=" + pass + "&panel=sw").jjAjax2();
+                    }
+//                    $(function () {
+//                        alert("statr");
+//                        new jj('#upload_btn_portalPost_pic1').jjAjaxFileUpload('upload_portalPost_pic1', '#portal_post_pic1', '#preview_portalPost_pic1');
+//                        alert("end");
+//                    });
+        </script>
+
+
+
+    </body>
+</html>
