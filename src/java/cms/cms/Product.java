@@ -26,30 +26,55 @@ public class Product {
     public static String _like = "account_product_like";//by mohammad
     public static String _dislike = "account_product_dislike";//by mohammad
     public static String _category_id = "account_product_category_id";//by mohammad
-    public static String _pic = "account_product_pic";
+    public static String _pic1 = "account_product_pic1";
+    public static String _pic2 = "account_product_pic2";
+    public static String _pic3 = "account_product_pic3";
+    public static String _pic4 = "account_product_pic4";
+    public static String _pic5 = "account_product_pic5";
+    public static String _pic6 = "account_product_pic6";
     public static String _pic_ext = "account_product_pic_ext";
     public static String _price1 = "account_product_price1";
     public static String _price2 = "account_product_price2";
     public static String _code = "account_product_code";
+    public static String _prop1 = "account_product_prop1";
     public static String _val1 = "account_product_val1";
+    public static String _prop2 = "account_product_prop2";
     public static String _val2 = "account_product_val2";
+    public static String _prop3 = "account_product_prop3";
     public static String _val3 = "account_product_val3";
+    public static String _prop4 = "account_product_prop4";
     public static String _val4 = "account_product_val4";
+    public static String _prop5 = "account_product_prop5";
     public static String _val5 = "account_product_val5";
+    public static String _prop6 = "account_product_prop6";
     public static String _val6 = "account_product_val6";
+    public static String _prop7 = "account_product_prop7";
     public static String _val7 = "account_product_val7";
+    public static String _prop8 = "account_product_prop8";
     public static String _val8 = "account_product_val8";
+    public static String _prop9 = "account_product_prop9";
     public static String _val9 = "account_product_val9";
+    public static String _prop10 = "account_product_prop10";
     public static String _val10 = "account_product_val10";
+    public static String _prop11 = "account_product_prop11";
     public static String _val11 = "account_product_val11";
+    public static String _prop12 = "account_product_prop12";
     public static String _val12 = "account_product_val12";
+    public static String _prop13 = "account_product_prop13";
     public static String _val13 = "account_product_val13";
+    public static String _prop14 = "account_product_prop14";
     public static String _val14 = "account_product_val14";
+    public static String _prop15 = "account_product_prop15";
     public static String _val15 = "account_product_val15";
+    public static String _prop16 = "account_product_prop16";
     public static String _val16 = "account_product_val16";
+    public static String _prop17 = "account_product_prop17";
     public static String _val17 = "account_product_val17";
+    public static String _prop18 = "account_product_prop18";
     public static String _val18 = "account_product_val18";
+    public static String _prop19 = "account_product_prop19";
     public static String _val19 = "account_product_val19";
+    public static String _prop20 = "account_product_prop20";
     public static String _val20 = "account_product_val20";
     public static String lbl_insert = "ذخیره";
     public static String lbl_delete = "حذف";
@@ -139,27 +164,52 @@ public class Product {
             map.put(_code, jjTools.getParameter(request, _code));
             map.put(_name, jjTools.getParameter(request, _name));
             map.put(_page, jjTools.getParameter(request, _page));
-            map.put(_pic, jjTools.getParameter(request, _pic));
+            map.put(_pic1, jjTools.getParameter(request, _pic1));
+            map.put(_pic2, jjTools.getParameter(request, _pic2));
+            map.put(_pic3, jjTools.getParameter(request, _pic3));
+            map.put(_pic4, jjTools.getParameter(request, _pic4));
+            map.put(_pic5, jjTools.getParameter(request, _pic5));
+            map.put(_pic6, jjTools.getParameter(request, _pic6));
             map.put(_pic_ext, jjTools.getParameter(request, _pic_ext));
+            map.put(_prop1, jjTools.getParameter(request, _prop1));
             map.put(_val1, jjTools.getParameter(request, _val1));
+            map.put(_prop2, jjTools.getParameter(request, _prop2));
             map.put(_val2, jjTools.getParameter(request, _val2));
+            map.put(_prop3, jjTools.getParameter(request, _prop3));
             map.put(_val3, jjTools.getParameter(request, _val3));
+            map.put(_prop4, jjTools.getParameter(request, _prop4));
             map.put(_val4, jjTools.getParameter(request, _val4));
+            map.put(_prop5, jjTools.getParameter(request, _prop5));
             map.put(_val5, jjTools.getParameter(request, _val5));
+            map.put(_prop6, jjTools.getParameter(request, _prop6));
             map.put(_val6, jjTools.getParameter(request, _val6));
+            map.put(_prop7, jjTools.getParameter(request, _prop7));
             map.put(_val7, jjTools.getParameter(request, _val7));
+            map.put(_prop8, jjTools.getParameter(request, _prop8));
             map.put(_val8, jjTools.getParameter(request, _val8));
+            map.put(_prop9, jjTools.getParameter(request, _prop9));
             map.put(_val9, jjTools.getParameter(request, _val9));
+            map.put(_prop10, jjTools.getParameter(request, _prop10));
             map.put(_val10, jjTools.getParameter(request, _val10));
+            map.put(_prop11, jjTools.getParameter(request, _prop11));
             map.put(_val11, jjTools.getParameter(request, _val11));
+            map.put(_prop12, jjTools.getParameter(request, _prop12));
             map.put(_val12, jjTools.getParameter(request, _val12));
+            map.put(_prop13, jjTools.getParameter(request, _prop13));
             map.put(_val13, jjTools.getParameter(request, _val13));
+            map.put(_prop14, jjTools.getParameter(request, _prop14));
             map.put(_val14, jjTools.getParameter(request, _val14));
+            map.put(_prop15, jjTools.getParameter(request, _prop15));
             map.put(_val15, jjTools.getParameter(request, _val15));
+            map.put(_prop16, jjTools.getParameter(request, _prop16));
             map.put(_val16, jjNumber.isDigit(jjTools.getParameter(request, _val16)) ? Integer.parseInt(jjTools.getParameter(request, _val16)) : 0);
+            map.put(_prop17, jjTools.getParameter(request, _prop17));
             map.put(_val17, jjNumber.isDigit(jjTools.getParameter(request, _val17)) ? Integer.parseInt(jjTools.getParameter(request, _val17)) : 0);
+            map.put(_prop18, jjTools.getParameter(request, _prop18));
             map.put(_val18, jjNumber.isDigit(jjTools.getParameter(request, _val18)) ? Integer.parseInt(jjTools.getParameter(request, _val18)) : 0);
+            map.put(_prop19, jjTools.getParameter(request, _prop19));
             map.put(_val19, jjNumber.isDigit(jjTools.getParameter(request, _val19)) ? Integer.parseInt(jjTools.getParameter(request, _val19)) : 0);
+            map.put(_prop20, jjTools.getParameter(request, _prop20));
             map.put(_val20, jjNumber.isDigit(jjTools.getParameter(request, _val20)) ? Integer.parseInt(jjTools.getParameter(request, _val20)) : 0);
             map.put(_price1, jjNumber.isDigit(jjTools.getParameter(request, _price1)) ? Integer.parseInt(jjTools.getParameter(request, _price1)) : 0);
             map.put(_price2, jjNumber.isDigit(jjTools.getParameter(request, _price2)) ? Integer.parseInt(jjTools.getParameter(request, _price2)) : 0);
@@ -203,28 +253,52 @@ public class Product {
             map.put(_code, jjTools.getParameter(request, _code));
             map.put(_name, jjTools.getParameter(request, _name));
             map.put(_page, jjTools.getParameter(request, _page));
-            map.put(_pic, jjTools.getParameter(request, _pic));
+            map.put(_pic1, jjTools.getParameter(request, _pic1));
+            map.put(_pic2, jjTools.getParameter(request, _pic2));
+            map.put(_pic3, jjTools.getParameter(request, _pic3));
+            map.put(_pic4, jjTools.getParameter(request, _pic4));
+            map.put(_pic5, jjTools.getParameter(request, _pic5));
+            map.put(_pic6, jjTools.getParameter(request, _pic6));
             map.put(_pic_ext, jjTools.getParameter(request, _pic_ext));
+            map.put(_prop1, jjTools.getParameter(request, _prop1));
             map.put(_val1, jjTools.getParameter(request, _val1));
+            map.put(_prop2, jjTools.getParameter(request, _prop2));
             map.put(_val2, jjTools.getParameter(request, _val2));
+            map.put(_prop3, jjTools.getParameter(request, _prop3));
             map.put(_val3, jjTools.getParameter(request, _val3));
+            map.put(_prop4, jjTools.getParameter(request, _prop4));
             map.put(_val4, jjTools.getParameter(request, _val4));
+            map.put(_prop5, jjTools.getParameter(request, _prop5));
             map.put(_val5, jjTools.getParameter(request, _val5));
+            map.put(_prop6, jjTools.getParameter(request, _prop6));
             map.put(_val6, jjTools.getParameter(request, _val6));
+            map.put(_prop7, jjTools.getParameter(request, _prop7));
             map.put(_val7, jjTools.getParameter(request, _val7));
+            map.put(_prop8, jjTools.getParameter(request, _prop8));
             map.put(_val8, jjTools.getParameter(request, _val8));
+            map.put(_prop9, jjTools.getParameter(request, _prop9));
             map.put(_val9, jjTools.getParameter(request, _val9));
+            map.put(_prop10, jjTools.getParameter(request, _prop10));
             map.put(_val10, jjTools.getParameter(request, _val10));
+            map.put(_prop11, jjTools.getParameter(request, _prop11));
             map.put(_val11, jjTools.getParameter(request, _val11));
+            map.put(_prop12, jjTools.getParameter(request, _prop12));
             map.put(_val12, jjTools.getParameter(request, _val12));
+            map.put(_prop13, jjTools.getParameter(request, _prop13));
             map.put(_val13, jjTools.getParameter(request, _val13));
+            map.put(_prop14, jjTools.getParameter(request, _prop14));
             map.put(_val14, jjTools.getParameter(request, _val14));
+            map.put(_prop15, jjTools.getParameter(request, _prop15));
             map.put(_val15, jjTools.getParameter(request, _val15));
-
+            map.put(_prop16, jjTools.getParameter(request, _prop16));
             map.put(_val16, jjNumber.isDigit(jjTools.getParameter(request, _val16)) ? Integer.parseInt(jjTools.getParameter(request, _val16)) : 0);
+            map.put(_prop17, jjTools.getParameter(request, _prop17));
             map.put(_val17, jjNumber.isDigit(jjTools.getParameter(request, _val17)) ? Integer.parseInt(jjTools.getParameter(request, _val17)) : 0);
+            map.put(_prop18, jjTools.getParameter(request, _prop18));
             map.put(_val18, jjNumber.isDigit(jjTools.getParameter(request, _val18)) ? Integer.parseInt(jjTools.getParameter(request, _val18)) : 0);
+            map.put(_prop19, jjTools.getParameter(request, _prop19));
             map.put(_val19, jjNumber.isDigit(jjTools.getParameter(request, _val19)) ? Integer.parseInt(jjTools.getParameter(request, _val19)) : 0);
+            map.put(_prop20, jjTools.getParameter(request, _prop20));
             map.put(_val20, jjNumber.isDigit(jjTools.getParameter(request, _val20)) ? Integer.parseInt(jjTools.getParameter(request, _val20)) : 0);
             map.put(_price1, jjNumber.isDigit(jjTools.getParameter(request, _price1)) ? Integer.parseInt(jjTools.getParameter(request, _price1)) : 0);
             map.put(_price2, jjNumber.isDigit(jjTools.getParameter(request, _price2)) ? Integer.parseInt(jjTools.getParameter(request, _price2)) : 0);
@@ -324,28 +398,53 @@ public class Product {
             html.append(Js.setVal(_code, row.get(0).get(_code)));
             html.append(Js.setVal(_name, row.get(0).get(_name)));
             html.append(Js.setVal(_page, row.get(0).get(_page)));
-            html.append(Js.setVal(_pic, row.get(0).get(_pic)));
+            html.append(Js.setVal(_pic1, row.get(0).get(_pic1)));
+            html.append(Js.setVal(_pic2, row.get(0).get(_pic2)));
+            html.append(Js.setVal(_pic3, row.get(0).get(_pic3)));
+            html.append(Js.setVal(_pic4, row.get(0).get(_pic4)));
+            html.append(Js.setVal(_pic5, row.get(0).get(_pic5)));
+            html.append(Js.setVal(_pic6, row.get(0).get(_pic6)));
             html.append(Js.setVal(_price1, row.get(0).get(_price1)));
             html.append(Js.setVal(_price2, row.get(0).get(_price2)));
+            html.append(Js.setVal(_prop1, row.get(0).get(_prop1)));
             html.append(Js.setVal(_val1, row.get(0).get(_val1)));
+            html.append(Js.setVal(_prop2, row.get(0).get(_prop2)));
             html.append(Js.setVal(_val2, row.get(0).get(_val2)));
+            html.append(Js.setVal(_prop3, row.get(0).get(_prop3)));
             html.append(Js.setVal(_val3, row.get(0).get(_val3)));
+            html.append(Js.setVal(_prop4, row.get(0).get(_prop4)));
             html.append(Js.setVal(_val4, row.get(0).get(_val4)));
+            html.append(Js.setVal(_prop5, row.get(0).get(_prop5)));
             html.append(Js.setVal(_val5, row.get(0).get(_val5)));
+            html.append(Js.setVal(_prop6, row.get(0).get(_prop6)));
             html.append(Js.setVal(_val6, row.get(0).get(_val6)));
+            html.append(Js.setVal(_prop7, row.get(0).get(_prop7)));
             html.append(Js.setVal(_val7, row.get(0).get(_val7)));
+            html.append(Js.setVal(_prop8, row.get(0).get(_prop8)));
             html.append(Js.setVal(_val8, row.get(0).get(_val8)));
+            html.append(Js.setVal(_prop9, row.get(0).get(_prop9)));
             html.append(Js.setVal(_val9, row.get(0).get(_val9)));
+            html.append(Js.setVal(_prop10, row.get(0).get(_prop10)));
             html.append(Js.setVal(_val10, row.get(0).get(_val10)));
+            html.append(Js.setVal(_prop11, row.get(0).get(_prop11)));
             html.append(Js.setVal(_val11, row.get(0).get(_val11)));
+            html.append(Js.setVal(_prop12, row.get(0).get(_prop12)));
             html.append(Js.setVal(_val12, row.get(0).get(_val12)));
+            html.append(Js.setVal(_prop13, row.get(0).get(_prop13)));
             html.append(Js.setVal(_val13, row.get(0).get(_val13)));
+            html.append(Js.setVal(_prop14, row.get(0).get(_prop14)));
             html.append(Js.setVal(_val14, row.get(0).get(_val14)));
+            html.append(Js.setVal(_prop15, row.get(0).get(_prop15)));
             html.append(Js.setVal(_val15, row.get(0).get(_val15)));
+            html.append(Js.setVal(_prop16, row.get(0).get(_prop16)));
             html.append(Js.setVal(_val16, row.get(0).get(_val16)));
+            html.append(Js.setVal(_prop17, row.get(0).get(_prop17)));
             html.append(Js.setVal(_val17, row.get(0).get(_val17)));
+            html.append(Js.setVal(_prop18, row.get(0).get(_prop18)));
             html.append(Js.setVal(_val18, row.get(0).get(_val18)));
+            html.append(Js.setVal(_prop19, row.get(0).get(_prop19)));
             html.append(Js.setVal(_val19, row.get(0).get(_val19)));
+            html.append(Js.setVal(_prop20, row.get(0).get(_prop20)));
             html.append(Js.setVal(_val20, row.get(0).get(_val20)));
 
             boolean accDel = Access_User.hasAccess2(request, db, rul_dlt);
@@ -355,8 +454,8 @@ public class Product {
             html.append(Js.setVal(_abstract, row.get(0).get(_abstract)));
             html.append(Js.setValEditor(_content, row.get(0).get(_content)));
             /*اگر محصول عکس داشت*/
-            if (!row.get(0).get(_pic).toString().isEmpty()) {
-                html.append(Js.setAttr("#account_product_pic_name_preview", "src", row.get(0).get(_pic).toString()));
+            if (!row.get(0).get(_pic1).toString().isEmpty()) {
+                html.append(Js.setAttr("#account_product_pic_name_preview", "src", row.get(0).get(_pic1).toString()));
             }
 
             html.append(Js.setVal(_priority, row.get(0).get(_priority)));
@@ -396,7 +495,6 @@ public class Product {
             }
 
             //html.append(Js.setValEditor(_content, row.get(0).get(_content)));
-
             if (accEdt) {
                 html2.append("<input type=\"button\" id=\"edit_Product\" value=\"" + lbl_edit + "\" class=\"tahoma10\">");
                 html.append(Js.buttonMouseClick("#edit_Product", Js.jjProduct.edit()));
@@ -546,8 +644,8 @@ public class Product {
                     if (likes >= 0) {
                         temphtml.append("<div class='productlikeDiv' onclick='productLike(" + id + ");' >" + likes + " موافق </div>");
                     }
-                    String src = topProductRow.get(i).get(_pic).toString();
-                    
+                    String src = topProductRow.get(i).get(_pic1).toString();
+
                     //اگر تصویراز میان تصاویر سایت بود، تصویر کوچک را برگرداند
                     if (src.matches("upload/p[0-9]{10}.{4}")) {
                         String smalPicSrc = src.replace(".", "_small.");//select small pic
@@ -620,7 +718,7 @@ public class Product {
             if (likes >= 0) {
                 html.append("<div class='productlikeDiv' onclick='productLike(" + id + ");' >" + likes + " موافق </div>");
             }
-            html.append("<img class='productPicDiv' src='" + row.get(0).get(_pic).toString() + "'/>");
+            html.append("<img class='productPicDiv' src='" + row.get(0).get(_pic1).toString() + "'/>");
             html.append("<span class='productTitlespan'><h3>" + row.get(0).get(_name).toString() + "<h3></span>");
             html.append("<div class='productabstarctDiv'>" + row.get(0).get(_abstract).toString() + "</div>");
             html.append("<div id='newContentDiv' class='newContentDiv'></div>");
