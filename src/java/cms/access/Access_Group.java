@@ -1,3 +1,4 @@
+//<<<<<<< HEAD
 package cms.access;
 
 import cms.tools.*;

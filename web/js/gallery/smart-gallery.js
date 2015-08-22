@@ -1,3 +1,4 @@
+
 (function($) {
     $.fn.extend({
         gallery: function(options) {

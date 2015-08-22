@@ -1,3 +1,4 @@
+
 /**
  * jCarouselLite - jQuery plugin to navigate images/any content in a carousel style widget.
  * @requires jQuery v1.2 or above
@@ -360,5 +361,4 @@ function width(el) {
 function height(el) {
     return el[0].offsetHeight + css(el, 'marginTop') + css(el, 'marginBottom');
 };
-
 })(jQuery);

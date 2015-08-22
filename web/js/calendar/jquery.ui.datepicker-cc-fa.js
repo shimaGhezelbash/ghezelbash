@@ -1,4 +1,5 @@
-﻿// Mahdi Hasheminezhad. email: hasheminezhad at gmail dot com (http://hasheminezhad.com)
+
+// Mahdi Hasheminezhad. email: hasheminezhad at gmail dot com (http://hasheminezhad.com)
 jQuery(function($){
 	$.datepicker.regional['fa'] = {
 		calendar: JalaliDate,

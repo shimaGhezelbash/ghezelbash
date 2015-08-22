@@ -1,3 +1,4 @@
+
 /*
  * 	Easy Slider 1.5 - jQuery plugin
  *	written by Alen Grakalic	
@@ -170,6 +171,3 @@
 	};
 
 })(jQuery);
-
-
-

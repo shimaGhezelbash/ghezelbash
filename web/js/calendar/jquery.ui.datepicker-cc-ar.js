@@ -1,3 +1,4 @@
+
 // Mahdi Hasheminezhad. email: hasheminezhad at gmail dot com (http://hasheminezhad.com)
 jQuery(function($){
 	$.datepicker.regional['ar'] = {

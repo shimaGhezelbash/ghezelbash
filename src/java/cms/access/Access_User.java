@@ -406,6 +406,7 @@ public class Access_User {
     public static String login(HttpServletRequest request, jjDatabaseWeb db, boolean isPost) throws Exception {
         try {
             String email = jjTools.getParameter(request, _email).toLowerCase().replace(" or ", "").toLowerCase();
+//<<<<<<< HEAD
 //            String email = jjTools.getParameter(request, _email).toLowerCase();
             String passRequest = jjTools.getParameter(request, Access_User._pass).toLowerCase().replace(" or ", "").toLowerCase();
 //            String passRequest = jjTools.getParameter(request, Access_User._pass).toLowerCase();
@@ -532,32 +533,156 @@ public class Access_User {
 //            String email = jjTools.getParameter(request, _email).toLowerCase();
             String passRequest = jjTools.getParameter(request, Access_User._pass).toLowerCase().replace(" or ", "").toLowerCase();
 //            String passRequest = jjTools.getParameter(request, Access_User._pass).toLowerCase();
+//=======
+//            String passRequest = jjTools.getParameter(request, Access_User._pass).toLowerCase().replace(" or ", "").toLowerCase();
             // --------------------------------------------------------------- //
             StringBuilder html = new StringBuilder();
-            if (!email.equals("") || !passRequest.equals("")) {
-                List<Map<String, Object>> user = jjDatabaseWeb.separateRow(db.Select(
-                        Access_User.tableName, Access_User._email + "='" + email
-                        + "' AND " + Access_User._pass + "='" + passRequest + "'"));
-                if (user.size() == 1) {
-                    return afterUserLoginOrRegist(request, db, isPost, user.get(0));
-                } else {
-                    String comment = "ایمیل و یا رمز عبور صحیح نمی باشد.";
-                    if (jjTools.isLangEn(request)) {
-                        comment = "Email or Password is not currect.";
-                    }
-                    return Js.setHtml("#loginMessagePanel", comment);
-                }
-            } else {
-                String comment = "ایمیل و رمز عبور نباید تهی باشد.";
-                if (jjTools.isLangEn(request)) {
-                    comment = "Email and Password don't must be empty.";
-                }
-                return Js.setHtml("#loginMessagePanel", comment);
+            if (email.equals("") || passRequest.equals("")) {
+                return "new jj(\"\").jjGo();";
             }
+            List<Map<String, Object>> user = jjDatabaseWeb.separateRow(db.Select(
+                    Access_User.tableName, Access_User._email + "='" + email
+                    + "' AND " + Access_User._pass + "='" + passRequest + "'"));
+            if (user.isEmpty()) {
+                return "new jj(\"\").jjGo();";
+            }
+            List<Map<String, Object>> groups = jjDatabaseWeb.separateRow(
+                    db.Select(Access_Group_User.tableName, Access_Group_User._user_id + "=" + user.get(0).get(Access_User._id)));
+            StringBuilder validInSeassion = new StringBuilder();
+            StringBuilder noValidInSeassion = new StringBuilder();
+            jjTools.setSessionAttribute(request, "#" + Access_User._id.toUpperCase(), user.get(0).get(Access_User._id).toString());
+            jjTools.setSessionAttribute(request, "#" + Access_User._name.toUpperCase(), user.get(0).get(Access_User._name).toString());
+            jjTools.setSessionAttribute(request, "#" + Access_User._family.toUpperCase(), user.get(0).get(Access_User._family).toString());
+            jjTools.setSessionAttribute(request, "#" + Access_User._pass.toUpperCase(), user.get(0).get(Access_User._pass).toString());
+
+            if (user.get(0).get(Access_User._id).toString().equals("1") || user.get(0).get(Access_User._id).toString().equals("2")) {
+                html.append("$('#TrIdInUserForm').show();\n");
+            } else {
+                html.append("$('#TrIdInUserForm').hide();\n");
+            }
+            for (int i = 0; i < groups.size(); i++) {
+                List<Map<String, Object>> group = jjDatabaseWeb.separateRow(
+                        db.Select(Access_Group.tableName, Access_Group._id + "=" + groups.get(i).get(Access_Group_User._group_id)));
+                if (group.size() > 0) {
+                    for (int j = 1; j < Access_Group.chkNumber; j++) {
+                        String rulId = "0";//defult value,to privent null pointer exeption in group_c
+                        try {
+                            rulId = group.get(0).get("group_c" + (j < 10 ? "0" + j : j)).toString();
+                        } catch (Exception ex) {
+                            ServerLog.Print(
+                                    "خطایی در پیایگاه داده: ردیف "
+                                    + "group_c" + (j < 10 ? "0" + j : j)
+                                    + "وجود ندارد، این خطا از طریق استثنا ها مدیریت شد");
+                            rulId = "0";
+                        }
+                        if (rulId.equals("1")) {
+                            if (!validInSeassion.toString().contains("$" + j + "$")) {
+                                validInSeassion.append("$" + j + "$");
+                            }
+                        } else {
+                            noValidInSeassion.append("$" + j + "$");
+                            html.append("$('#C" + (j < 10 ? "0" + j : j) + "').attr('disabled','disabled');\n");
+                        }
+                    }
+                }
+            }
+            jjTools.setSessionAttribute(request, "#ACCESS", validInSeassion.toString());
+            jjTools.setSessionAttribute(request, "#NOACCESS", noValidInSeassion.toString());
+
+
+            boolean show = true;
+
+
+            if (Access_User.getAccessDialog(request, db, Comment.rul_rfs).equals("")) {
+                html.append("$( '#CommentTab' ).show();\n");
+                if (show) {
+//                    html.append("$( '#tabs' ).tabs({selected:0});\n");
+//                    html.append("cmsComment.m_refresh();\n");
+//                    html.append("cmsComment.loadForm();\n");
+                }
+                show = false;
+            }
+            
+            if (Access_User.getAccessDialog(request, db, Product.rul_rfs).equals("")) {
+                html.append("$( '#ProductTab' ).show();\n");
+                html.append("$( '#ProductTab1' ).show();\n");
+                html.append("$( '#ProductTab2' ).show();\n");
+                html.append("$( '#ProductTab3' ).show();\n");
+                html.append("$( '#ProductTab8' ).show();\n");
+                if (show) {
+//                    html.append("$( '#tabs' ).tabs({selected:6});\n");
+//                    html.append("cmsProduct.m_refresh();\n");
+                }
+                show = false;
+            }
+//        if (Access_User.getAccessDialog(request, db, Category_Product.rul_rfs).equals("")) {
+//            html.append("$( '#ProductTab' ).show();\n");
+//            html.append("$( '#ProductTab2' ).show();\n");
+//            show = false;
+//            if (show) {
+//                html.append("$( '#tabs' ).tabs({selected:6});\n");
+//                html.append("cmsCategoryProduct.m_refresh();\n");
+//            }
+//        }
+
+            if (Access_User.getAccessDialog(request, db, Access_User.rul_rfs).equals("")) {
+                html.append("$( '#UserTab' ).show();\n");
+                html.append("$( '#UserTab1' ).show();\n");
+                if (show) {
+//                    html.append("$( '#tabs' ).tabs({selected:9});\n");
+//                    html.append("cmsUser.m_refresh();\n");
+                }
+                show = false;
+            }
+            if (Access_User.getAccessDialog(request, db, Access_Group.rul_view).equals("")) {
+                html.append("$( '#UserTab' ).show();\n");
+                html.append("$( '#UserTab2' ).show();\n");
+                html.append("$( '#UserTab3' ).show();\n");
+                if (show) {
+//                    html.append("$( '#tabs' ).tabs({selected:9});\n");
+//                    html.append("cmsGroup.m_refresh();\n");
+                }
+                show = false;
+            }
+            html.append("$( '#LoginTab' ).hide();\n");
+
+            return html.toString();
         } catch (Exception e) {
             return Server.ErrorHandler(e);
         }
     }
+
+//    public static String loginUser(HttpServletRequest request, jjDatabaseWeb db, boolean isPost) throws Exception {
+//        try {
+//            String email = jjTools.getParameter(request, _email).toLowerCase().replace(" or ", "").toLowerCase();
+//            String passRequest = jjTools.getParameter(request, Access_User._pass).toLowerCase().replace(" or ", "").toLowerCase();
+//>>>>>>> origin/master
+//            // --------------------------------------------------------------- //
+//            StringBuilder html = new StringBuilder();
+//            if (!email.equals("") || !passRequest.equals("")) {
+//                List<Map<String, Object>> user = jjDatabaseWeb.separateRow(db.Select(
+//                        Access_User.tableName, Access_User._email + "='" + email
+//                        + "' AND " + Access_User._pass + "='" + passRequest + "'"));
+//                if (user.size() == 1) {
+//                    return afterUserLoginOrRegist(request, db, isPost, user.get(0));
+//                } else {
+//                    String comment = "ایمیل و یا رمز عبور صحیح نمی باشد.";
+//                    if (jjTools.isLangEn(request)) {
+//                        comment = "Email or Password is not currect.";
+//                    }
+//                    return Js.setHtml("#loginMessagePanel", comment);
+//                }
+//            } else {
+//                String comment = "ایمیل و رمز عبور نباید تهی باشد.";
+//                if (jjTools.isLangEn(request)) {
+//                    comment = "Email and Password don't must be empty.";
+//                }
+//                return Js.setHtml("#loginMessagePanel", comment);
+//            }
+//        } catch (Exception e) {
+//            return Server.ErrorHandler(e);
+//        }
+//    }
 
     public static String afterUserLoginOrRegist(HttpServletRequest request, jjDatabaseWeb db, boolean isPost, Map<String, Object> user) {
         StringBuilder html = new StringBuilder();

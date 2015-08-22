@@ -43,6 +43,9 @@ public class jjDatabaseWeb {
         //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         Class.forName("com.mysql.jdbc.Driver");
         connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_my_test?characterSetResults=UTF-8&characterEncoding=UTF-8&useUnicode=yes", "root", "m123456");
+
+        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_my_test?characterSetResults=UTF-8&characterEncoding=UTF-8&useUnicode=yes", "root", "m12345");
+
         //or
         //connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysqlDatabase?useUnicode=true&amp;characterEncoding=utf-8", "root", "");
         //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

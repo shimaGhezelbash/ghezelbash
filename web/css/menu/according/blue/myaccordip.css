@@ -1,3 +1,4 @@
+
 /*
 
 note that : toggleList(id); in index.js run close and opening sub menu
@@ -172,4 +173,3 @@ note that : toggleList(id); in index.js run close and opening sub menu
     position:relative;
     cursor: pointer;
 }
-#hierarchyListDiv div.arrowImage {position:absolute; overflow:hidden;}

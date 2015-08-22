@@ -1,3 +1,4 @@
+
 // Server 
 // Servlet name for response to user request
 var setting_server = "Server";
