@@ -73,6 +73,7 @@
                     <file>${file.reference.MySql_connector-java-5.0.7-bin.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
+
             </web-module-libraries>
             <web-module-additional-libraries/>
             <source-roots>

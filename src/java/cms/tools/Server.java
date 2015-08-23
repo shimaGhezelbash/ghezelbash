@@ -56,6 +56,7 @@ public class Server extends HttpServlet {
 //                jjTools.setSessionAttribute(request, "databaseName", dbName);
 //            }
 //            databaseName = jjTools.getSessionAttribute(request, "databaseName").equals("") ? databaseName : jjTools.getSessionAttribute(request, "databaseName");
+
             int dot = Action.indexOf(".");
             if (dot > -1) {
                 clazz = Action.substring(0, dot);
