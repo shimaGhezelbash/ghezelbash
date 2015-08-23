@@ -76,13 +76,13 @@ public class Product {
     public static String _val19 = "account_product_val19";
     public static String _prop20 = "account_product_prop20";
     public static String _val20 = "account_product_val20";
-    public static String lbl_insert = "ذخیره";
-    public static String lbl_delete = "حذف";
-    public static String lbl_edit = "ویرایش";
-    public static String lbl_add_en = "افزودن زبان انگلیسی";
-    public static String lbl_edit_en = "ویرایش بخش انگلیسی";
-    public static String lbl_add_ar = "افزودن زبان عربی";
-    public static String lbl_edit_ar = "ویرایش بخش عربی";
+    public static String lbl_insert = "Ø°Ø®ÛŒØ±Ù‡";
+    public static String lbl_delete = "Ø­Ø°Ù�";
+    public static String lbl_edit = "ÙˆÛŒØ±Ø§ÛŒØ´";
+    public static String lbl_add_en = "Ø§Ù�Ø²ÙˆØ¯Ù† Ø²Ø¨Ø§Ù† Ø§Ù†Ú¯Ù„ÛŒØ³ÛŒ";
+    public static String lbl_edit_en = "ÙˆÛŒØ±Ø§ÛŒØ´ Ø¨Ø®Ø´ Ø§Ù†Ú¯Ù„ÛŒØ³ÛŒ";
+    public static String lbl_add_ar = "Ø§Ù�Ø²ÙˆØ¯Ù† Ø²Ø¨Ø§Ù† Ø¹Ø±Ø¨ÛŒ";
+    public static String lbl_edit_ar = "ÙˆÛŒØ±Ø§ÛŒØ´ Ø¨Ø®Ø´ Ø¹Ø±Ø¨ÛŒ";
     public static int rul_rfs = 56;
     public static int rul_ins = 57;
     public static int rul_edt = 58;
@@ -103,12 +103,12 @@ public class Product {
             DefaultTableModel dtm = db.Select(tableName, _lang + "=1");
             List<Map<String, Object>> row = jjDatabaseWeb.separateRow(dtm);
             html.append("<table id='refreshProduct' class='tahoma10' style='direction: rtl;width:982px'><thead>");
-            html.append("<th width='5%'>کد</th>");
-            html.append("<th width='20%'>کد محصول</th>");
-            html.append("<th width='60%'>عنوان</th>");
-            html.append("<th width='10%'>قیمت</th>");
-            html.append("<th width='10%'>دسته</th>");
-            html.append("<th width='5%'>عملیات</th>");
+            html.append("<th width='5%'>Ú©Ø¯</th>");
+            html.append("<th width='20%'>Ú©Ø¯ Ù…Ø­ØµÙˆÙ„</th>");
+            html.append("<th width='60%'>Ø¹Ù†ÙˆØ§Ù†</th>");
+            html.append("<th width='10%'>Ù‚ÛŒÙ…Øª</th>");
+            html.append("<th width='10%'>Ø¯Ø³ØªÙ‡</th>");
+            html.append("<th width='5%'>Ø¹Ù…Ù„ÛŒØ§Øª</th>");
             html.append("</thead><tbody>");
             for (int i = 0; i < row.size(); i++) {
                 html.append("<tr  onclick='cmsProduct.m_select(" + row.get(i).get(_id) + ");' class='mousePointer'>");
@@ -130,7 +130,7 @@ public class Product {
                 panel = "swProductTbl";
             }
             String html2 = Js.setHtml("#" + panel, html.toString());
-            html2 += Js.table("#refreshProduct", height, 0, Access_User.getAccessDialog(request, db, rul_ins).equals("") ? "14" : "", "لیست محصولات");
+            html2 += Js.table("#refreshProduct", height, 0, Access_User.getAccessDialog(request, db, rul_ins).equals("") ? "14" : "", "Ù„ÛŒØ³Øª Ù…Ø­ØµÙˆÙ„Ø§Øª");
             return html2;
         } catch (Exception ex) {
             return Server.ErrorHandler(ex);
@@ -231,7 +231,7 @@ public class Product {
             String lang = jjTools.getParameter(request, _lang);
             map.put(_lang, jjNumber.isDigit(lang) ? Integer.parseInt(lang) : 1);
             if (db.insert(tableName, map).getRowCount() == 0) {
-                String errorMessage = "عملیات درج به درستی صورت نگرفت.";
+                String errorMessage = "Ø¹Ù…Ù„ÛŒØ§Øª Ø¯Ø±Ø¬ Ø¨Ù‡ Ø¯Ø±Ø³ØªÛŒ ØµÙˆØ±Øª Ù†Ú¯Ø±Ù�Øª.";
                 if (jjTools.getParameter(request, "myLang").equals("en")) {
                     errorMessage = "Edit Fail;";
                 }
@@ -326,7 +326,7 @@ public class Product {
             map.put(_lang, jjNumber.isDigit(lang) ? Integer.parseInt(lang) : 1);
 
             String id = jjTools.getParameter(request, _id);
-            String errorMessageId = jjValidation.isDigitMessageFa(id, "کد");
+            String errorMessageId = jjValidation.isDigitMessageFa(id, "Ú©Ø¯");
             if (!errorMessageId.equals("")) {
                 if (jjTools.isLangEn(request)) {
                     errorMessageId = jjValidation.isDigitMessageEn(id, "ID");
@@ -334,7 +334,7 @@ public class Product {
                 return Js.dialog(errorMessageId);
             }
             if (!db.update(tableName, map, _id + "=" + jjTools.getParameter(request, _id))) {
-                String errorMessage = "عملیات ویرایش به درستی صورت نگرفت.";
+                String errorMessage = "Ø¹Ù…Ù„ÛŒØ§Øª ÙˆÛŒØ±Ø§ÛŒØ´ Ø¨Ù‡ Ø¯Ø±Ø³ØªÛŒ ØµÙˆØ±Øª Ù†Ú¯Ø±Ù�Øª.";
                 if (jjTools.isLangEn(request)) {
                     errorMessage = "Edit Fail;";
                 }
@@ -353,7 +353,7 @@ public class Product {
                 return hasAccess;
             }
             String id = jjTools.getParameter(request, _id);
-            String errorMessageId = jjValidation.isDigitMessageFa(id, "کد");
+            String errorMessageId = jjValidation.isDigitMessageFa(id, "Ú©Ø¯");
             if (!errorMessageId.equals("")) {
                 if (jjTools.isLangEn(request)) {
                     errorMessageId = jjValidation.isDigitMessageEn(id, "ID");
@@ -361,7 +361,7 @@ public class Product {
                 return Js.dialog(errorMessageId);
             }
             if (!db.delete(tableName, _id + "=" + id)) {
-                String errorMessage = "عملیات حذف به درستی صورت نگرفت";
+                String errorMessage = "Ø¹Ù…Ù„ÛŒØ§Øª Ø­Ø°Ù� Ø¨Ù‡ Ø¯Ø±Ø³ØªÛŒ ØµÙˆØ±Øª Ù†Ú¯Ø±Ù�Øª";
                 if (jjTools.isLangEn(request)) {
                     errorMessage = "Delete Fail;";
                 }
@@ -376,7 +376,7 @@ public class Product {
     public static String select(HttpServletRequest request, jjDatabaseWeb db, boolean isPost) throws Exception {
         try {
             String id = jjTools.getParameter(request, _id);
-            String errorMessageId = jjValidation.isDigitMessageFa(id, "کد");
+            String errorMessageId = jjValidation.isDigitMessageFa(id, "Ú©Ø¯");
             if (!errorMessageId.equals("")) {
                 if (jjTools.isLangEn(request)) {
                     errorMessageId = jjValidation.isDigitMessageEn(id, "ID");
@@ -385,7 +385,7 @@ public class Product {
             }
             List<Map<String, Object>> row = jjDatabaseWeb.separateRow(db.Select(tableName, _id + "=" + id));
             if (row.size() == 0) {
-                String errorMessage = "رکوردی با این کد وجود ندارد.";
+                String errorMessage = "Ø±Ú©ÙˆØ±Ø¯ÛŒ Ø¨Ø§ Ø§ÛŒÙ† Ú©Ø¯ ÙˆØ¬ÙˆØ¯ Ù†Ø¯Ø§Ø±Ø¯.";
                 if (jjTools.isLangEn(request)) {
                     errorMessage = "Select Fail;";
                 }
@@ -453,9 +453,24 @@ public class Product {
             boolean acclng = Access_User.hasAccess2(request, db, rul_lng);
             html.append(Js.setVal(_abstract, row.get(0).get(_abstract)));
             html.append(Js.setValEditor(_content, row.get(0).get(_content)));
-            /*اگر محصول عکس داشت*/
+            /*Ø§Ú¯Ø± Ù…Ø­ØµÙˆÙ„ Ø¹Ú©Ø³ Ø¯Ø§Ø´Øª*/
             if (!row.get(0).get(_pic1).toString().isEmpty()) {
-                html.append(Js.setAttr("#account_product_pic_name_preview", "src", row.get(0).get(_pic1).toString()));
+                html.append(Js.setAttr("#account_product_pic_name_preview1", "src", row.get(0).get(_pic1).toString()));
+            }
+            if (!row.get(0).get(_pic2).toString().isEmpty()) {
+                html.append(Js.setAttr("#account_product_pic_name_preview2", "src", row.get(0).get(_pic2).toString()));
+            }
+            if (!row.get(0).get(_pic3).toString().isEmpty()) {
+                html.append(Js.setAttr("#account_product_pic_name_preview3", "src", row.get(0).get(_pic3).toString()));
+            }
+            if (!row.get(0).get(_pic4).toString().isEmpty()) {
+                html.append(Js.setAttr("#account_product_pic_name_preview4", "src", row.get(0).get(_pic4).toString()));
+            }
+            if (!row.get(0).get(_pic5).toString().isEmpty()) {
+                html.append(Js.setAttr("#account_product_pic_name_preview5", "src", row.get(0).get(_pic5).toString()));
+            }
+            if (!row.get(0).get(_pic6).toString().isEmpty()) {
+                html.append(Js.setAttr("#account_product_pic_name_preview6", "src", row.get(0).get(_pic6).toString()));
             }
 
             html.append(Js.setVal(_priority, row.get(0).get(_priority)));
@@ -548,7 +563,7 @@ public class Product {
                     }
                     return Js.setHtml("#" + panel, find) + (row.size() > 0 ? Js.setVal("#account_factor_pr_id_" + pr, row.get(0).get(_id)) : "");
                 } else {
-                    return Js.setHtml("#" + panel, "موردی یافت نشد.") + Js.setVal("#" + panel, "") + Js.setVal("#account_factor_pr_id_" + pr, "");
+                    return Js.setHtml("#" + panel, "Ù…ÙˆØ±Ø¯ÛŒ ÛŒØ§Ù�Øª Ù†Ø´Ø¯.") + Js.setVal("#" + panel, "") + Js.setVal("#account_factor_pr_id_" + pr, "");
                 }
             } else {
                 return Js.setHtml("#" + panel, "");
@@ -567,7 +582,7 @@ public class Product {
                 return hasAccess;
             }
             String id = jjTools.getParameter(request, _id);
-            String errorMessageId = jjValidation.isDigitMessageFa(id, "کد");
+            String errorMessageId = jjValidation.isDigitMessageFa(id, "Ú©Ø¯");
             if (!errorMessageId.equals("")) {
                 if (jjTools.isLangEn(request)) {
                     errorMessageId = jjValidation.isDigitMessageEn(id, "ID");
@@ -576,7 +591,7 @@ public class Product {
             }
             List<Map<String, Object>> row = jjDatabaseWeb.separateRow(db.Select(tableName, _id + "=" + id));
             if (row.size() == 0) {
-                String errorMessage = "مشتری با این کد وجود ندارد";
+                String errorMessage = "Ù…Ø´ØªØ±ÛŒ Ø¨Ø§ Ø§ÛŒÙ† Ú©Ø¯ ÙˆØ¬ÙˆØ¯ Ù†Ø¯Ø§Ø±Ø¯";
                 return Js.dialog(errorMessage);
             }
 
@@ -608,7 +623,7 @@ public class Product {
             StringBuffer html3 = new StringBuffer();//for JQuery statements
             String panel = jjTools.getParameter(request, "panel");
             panel = panel == null ? "sw" : panel;
-            /*طبقه بندی محصولات را برمیگرداند*/
+            /*Ø·Ø¨Ù‚Ù‡ Ø¨Ù†Ø¯ÛŒ Ù…Ø­ØµÙˆÙ„Ø§Øª Ø±Ø§ Ø¨Ø±Ù…ÛŒÚ¯Ø±Ø¯Ø§Ù†Ø¯*/
 //            html3.append(Category_Product.getHierarchyDiv(re, db));
             Integer category_id = new Integer(jjTools.getParameter(request, "id").toString());
 //          category_id = jjNumber.isDigit(jjTools.getParameter(request, "id").toString()) ? id : 1;
@@ -622,11 +637,11 @@ public class Product {
             }
 
             //---------------one product post creation
-            /*لیست محصولات را بر میگرداند*/
+            /*Ù„ÛŒØ³Øª Ù…Ø­ØµÙˆÙ„Ø§Øª Ø±Ø§ Ø¨Ø± Ù…ÛŒÚ¯Ø±Ø¯Ø§Ù†Ø¯*/
             StringBuilder temphtml = new StringBuilder();//for Div,Span and other Html elements
             html.append("<div id='swTopproductDiv' class='topproductDiv'></div>");
             if (topProductRow.isEmpty()) {
-                temphtml.append("<div class='noAnyThing'>!!! در این بخش موردی برای نمایش وجود ندارد<div>");
+                temphtml.append("<div class='noAnyThing'>!!! Ø¯Ø± Ø§ÛŒÙ† Ø¨Ø®Ø´ Ù…ÙˆØ±Ø¯ÛŒ Ø¨Ø±Ø§ÛŒ Ù†Ù…Ø§ÛŒØ´ ÙˆØ¬ÙˆØ¯ Ù†Ø¯Ø§Ø±Ø¯<div>");
             } else {
                 for (int i = 0; i < topProductRow.size(); i++) {
                     String id = topProductRow.get(i).get(_id).toString();
@@ -634,28 +649,69 @@ public class Product {
                     temphtml.append("<span class='productDatespan'>" + jjCalendar_IR.getViewFormat(topProductRow.get(i).get(_date).toString()) + "</span>");
                     int visit = new Integer(topProductRow.get(i).get(_visit).toString());
                     if (visit >= 0) {
-                        temphtml.append("<div class='productvisitDiv' >" + visit + " بار مشاهده </div>");
+                        temphtml.append("<div class='productvisitDiv' >" + visit + " Ø¨Ø§Ø± Ù…Ø´Ø§Ù‡Ø¯Ù‡ </div>");
                     }
                     int disLikes = new Integer(topProductRow.get(i).get(_dislike).toString());
                     if (disLikes >= 0) {
-                        temphtml.append("<div class='productDisLikeDiv' onclick='productDisLike(" + id + ");' >" + disLikes + " مخالف </div>");
+                        temphtml.append("<div class='productDisLikeDiv' onclick='productDisLike(" + id + ");' >" + disLikes + " Ù…Ø®Ø§Ù„Ù� </div>");
                     }
                     int likes = new Integer(topProductRow.get(i).get(_like).toString());
                     if (likes >= 0) {
-                        temphtml.append("<div class='productlikeDiv' onclick='productLike(" + id + ");' >" + likes + " موافق </div>");
+                        temphtml.append("<div class='productlikeDiv' onclick='productLike(" + id + ");' >" + likes + " Ù…ÙˆØ§Ù�Ù‚ </div>");
                     }
-                    String src = topProductRow.get(i).get(_pic1).toString();
-
-                    //اگر تصویراز میان تصاویر سایت بود، تصویر کوچک را برگرداند
-                    if (src.matches("upload/p[0-9]{10}.{4}")) {
-                        String smalPicSrc = src.replace(".", "_small.");//select small pic
-                        temphtml.append("<img class='productPicDiv' src='" + smalPicSrc + "'/>");
+                   
+                    String src1 = topProductRow.get(i).get(_pic1).toString();
+                    //Ø§Ú¯Ø± ØªØµÙˆÛŒØ±Ø§Ø² Ù…ÛŒØ§Ù† ØªØµØ§ÙˆÛŒØ± Ø³Ø§ÛŒØª Ø¨ÙˆØ¯ØŒ ØªØµÙˆÛŒØ± Ú©ÙˆÚ†Ú© Ø±Ø§ Ø¨Ø±Ú¯Ø±Ø¯Ø§Ù†Ø¯
+                    if (src1.matches("upload/p[0-9]{10}.{4}")) {
+                        String smalPicSrc1 = src1.replace(".", "_small.");//select small pic
+                        temphtml.append("<img class='productPicDiv' src='" + smalPicSrc1 + "'/>");
                     } else {
-                        temphtml.append("<img class='productPicDiv' src='" + src + "'/>");
+                        temphtml.append("<img class='productPicDiv' src='" + src1 + "'/>");
                     }
+                    String src2 = topProductRow.get(i).get(_pic2).toString();
+                    //Ø§Ú¯Ø± ØªØµÙˆÛŒØ±Ø§Ø² Ù…ÛŒØ§Ù† ØªØµØ§ÙˆÛŒØ± Ø³Ø§ÛŒØª Ø¨ÙˆØ¯ØŒ ØªØµÙˆÛŒØ± Ú©ÙˆÚ†Ú© Ø±Ø§ Ø¨Ø±Ú¯Ø±Ø¯Ø§Ù†Ø¯
+                    if (src2.matches("upload/p[0-9]{10}.{4}")) {
+                        String smalPicSrc2 = src2.replace(".", "_small.");//select small pic
+                        temphtml.append("<img class='productPicDiv' src='" + smalPicSrc2 + "'/>");
+                    } else {
+                        temphtml.append("<img class='productPicDiv' src='" + src2 + "'/>");
+                    }
+                    String src3 = topProductRow.get(i).get(_pic1).toString();
+                    //Ø§Ú¯Ø± ØªØµÙˆÛŒØ±Ø§Ø² Ù…ÛŒØ§Ù† ØªØµØ§ÙˆÛŒØ± Ø³Ø§ÛŒØª Ø¨ÙˆØ¯ØŒ ØªØµÙˆÛŒØ± Ú©ÙˆÚ†Ú© Ø±Ø§ Ø¨Ø±Ú¯Ø±Ø¯Ø§Ù†Ø¯
+                    if (src3.matches("upload/p[0-9]{10}.{4}")) {
+                        String smalPicSrc3 = src3.replace(".", "_small.");//select small pic
+                        temphtml.append("<img class='productPicDiv' src='" + smalPicSrc3 + "'/>");
+                    } else {
+                        temphtml.append("<img class='productPicDiv' src='" + src3 + "'/>");
+                    }
+                    String src4 = topProductRow.get(i).get(_pic1).toString();
+                    //Ø§Ú¯Ø± ØªØµÙˆÛŒØ±Ø§Ø² Ù…ÛŒØ§Ù† ØªØµØ§ÙˆÛŒØ± Ø³Ø§ÛŒØª Ø¨ÙˆØ¯ØŒ ØªØµÙˆÛŒØ± Ú©ÙˆÚ†Ú© Ø±Ø§ Ø¨Ø±Ú¯Ø±Ø¯Ø§Ù†Ø¯
+                    if (src4.matches("upload/p[0-9]{10}.{4}")) {
+                        String smalPicSrc4 = src4.replace(".", "_small.");//select small pic
+                        temphtml.append("<img class='productPicDiv' src='" + smalPicSrc4 + "'/>");
+                    } else {
+                        temphtml.append("<img class='productPicDiv' src='" + src4 + "'/>");
+                    }
+                    String src5 = topProductRow.get(i).get(_pic1).toString();
+                    //Ø§Ú¯Ø± ØªØµÙˆÛŒØ±Ø§Ø² Ù…ÛŒØ§Ù† ØªØµØ§ÙˆÛŒØ± Ø³Ø§ÛŒØª Ø¨ÙˆØ¯ØŒ ØªØµÙˆÛŒØ± Ú©ÙˆÚ†Ú© Ø±Ø§ Ø¨Ø±Ú¯Ø±Ø¯Ø§Ù†Ø¯
+                    if (src5.matches("upload/p[0-9]{10}.{4}")) {
+                        String smalPicSrc5 = src5.replace(".", "_small.");//select small pic
+                        temphtml.append("<img class='productPicDiv' src='" + smalPicSrc5 + "'/>");
+                    } else {
+                        temphtml.append("<img class='productPicDiv' src='" + src5 + "'/>");
+                    }
+                    String src6 = topProductRow.get(i).get(_pic1).toString();
+                    //Ø§Ú¯Ø± ØªØµÙˆÛŒØ±Ø§Ø² Ù…ÛŒØ§Ù† ØªØµØ§ÙˆÛŒØ± Ø³Ø§ÛŒØª Ø¨ÙˆØ¯ØŒ ØªØµÙˆÛŒØ± Ú©ÙˆÚ†Ú© Ø±Ø§ Ø¨Ø±Ú¯Ø±Ø¯Ø§Ù†Ø¯
+                    if (src6.matches("upload/p[0-9]{10}.{4}")) {
+                        String smalPicSrc6 = src5.replace(".", "_small.");//select small pic
+                        temphtml.append("<img class='productPicDiv' src='" + smalPicSrc6 + "'/>");
+                    } else {
+                        temphtml.append("<img class='productPicDiv' src='" + src6 + "'/>");
+                    }
+                    
                     temphtml.append("<span class='productTitlespan'><h3>" + topProductRow.get(i).get(_name).toString() + "</h3></span>");
                     //By Md----------------------
-                  /*نمایش جزئیات محصول*/
+                  /*Ù†Ù…Ø§ÛŒØ´ Ø¬Ø²Ø¦ÛŒØ§Øª Ù…Ø­ØµÙˆÙ„*/
                     temphtml.append("<div class='productabstarctDiv'><h4>" + topProductRow.get(i).get(_page).toString());
                     for (int j = 1; j <= 20; j++) {
                         String Key = "account_product_val" + String.valueOf(j);
@@ -671,10 +727,10 @@ public class Product {
                     temphtml.append("</h4></div>");
                     //----------------------------
                     temphtml.append("<span class='moreDatale'>"
-                            + "<a onclick='getOneproduct(" + id + ");'>" + "ادامه مطلب" + "</a>"
+                            + "<a onclick='getOneproduct(" + id + ");'>" + "Ø§Ø¯Ø§Ù…Ù‡ Ù…Ø·Ù„Ø¨" + "</a>"
                             + "</span>");
                     temphtml.append("<span class='coGruopproduct'>"
-                            + "<a onclick='swGetProducts(" + topProductRow.get(i).get(_category_id).toString() + ");'>" + "مطالب مرتبط" + "</a>"
+                            + "<a onclick='swGetProducts(" + topProductRow.get(i).get(_category_id).toString() + ");'>" + "Ù…Ø·Ø§Ù„Ø¨ Ù…Ø±ØªØ¨Ø·" + "</a>"
                             + "</span>");
                     temphtml.append("</div>");
                 }
@@ -698,7 +754,7 @@ public class Product {
             List<Map<String, Object>> row;
             row = jjDatabaseWeb.separateRow(db.Select(tableName, _id + " = " + id));
             if (row.isEmpty()) {
-                String errorMessage = "رکوردی با این کد وجود ندارد.";
+                String errorMessage = "Ø±Ú©ÙˆØ±Ø¯ÛŒ Ø¨Ø§ Ø§ÛŒÙ† Ú©Ø¯ ÙˆØ¬ÙˆØ¯ Ù†Ø¯Ø§Ø±Ø¯.";
                 if (jjTools.isLangEn(request)) {
                     errorMessage = "Select Fail;";
                 }
@@ -708,23 +764,28 @@ public class Product {
             html.append("<span class='productDatespan'>" + jjCalendar_IR.getViewFormat(row.get(0).get(_date).toString()) + "</span>");
             int visit = new Integer(row.get(0).get(_visit).toString());
             if (visit >= 0) {
-                html.append("<div class='productvisitDiv' >" + visit + " بار مشاهده </div>");
+                html.append("<div class='productvisitDiv' >" + visit + " Ø¨Ø§Ø± Ù…Ø´Ø§Ù‡Ø¯Ù‡ </div>");
             }
             int disLikes = new Integer(row.get(0).get(_dislike).toString());
             if (disLikes >= 0) {
-                html.append("<div class='productDisLikeDiv' onclick='productDisLike(" + id + ");' >" + disLikes + " مخالف </div>");
+                html.append("<div class='productDisLikeDiv' onclick='productDisLike(" + id + ");' >" + disLikes + " Ù…Ø®Ø§Ù„Ù� </div>");
             }
             int likes = new Integer(row.get(0).get(_like).toString());
             if (likes >= 0) {
-                html.append("<div class='productlikeDiv' onclick='productLike(" + id + ");' >" + likes + " موافق </div>");
+                html.append("<div class='productlikeDiv' onclick='productLike(" + id + ");' >" + likes + " Ù…ÙˆØ§Ù�Ù‚ </div>");
             }
             html.append("<img class='productPicDiv' src='" + row.get(0).get(_pic1).toString() + "'/>");
+            html.append("<img class='productPicDiv' src='" + row.get(0).get(_pic2).toString() + "'/>");
+            html.append("<img class='productPicDiv' src='" + row.get(0).get(_pic3).toString() + "'/>");
+            html.append("<img class='productPicDiv' src='" + row.get(0).get(_pic4).toString() + "'/>");
+            html.append("<img class='productPicDiv' src='" + row.get(0).get(_pic5).toString() + "'/>");
+            html.append("<img class='productPicDiv' src='" + row.get(0).get(_pic6).toString() + "'/>");
             html.append("<span class='productTitlespan'><h3>" + row.get(0).get(_name).toString() + "<h3></span>");
             html.append("<div class='productabstarctDiv'>" + row.get(0).get(_abstract).toString() + "</div>");
             html.append("<div id='newContentDiv' class='newContentDiv'></div>");
 
             html.append("<span class='moreDatale'>"
-                    + "<a onclick='swGetProducts(" + row.get(0).get(_category_id).toString() + ");'>" + " مطالب مرتبط" + "</a>"
+                    + "<a onclick='swGetProducts(" + row.get(0).get(_category_id).toString() + ");'>" + " Ù…Ø·Ø§Ù„Ø¨ Ù…Ø±ØªØ¨Ø·" + "</a>"
                     + "</span>");
             html.append("</div>");
 
@@ -762,7 +823,7 @@ public class Product {
     public static String add_EN(HttpServletRequest request, jjDatabaseWeb db, boolean isPost) throws Exception {
         try {
             String id = jjTools.getParameter(request, _id);
-            String errorMessageId = jjValidation.isDigitMessageFa(id, "کد");
+            String errorMessageId = jjValidation.isDigitMessageFa(id, "Ú©Ø¯");
             if (!errorMessageId.equals("")) {
                 if (jjTools.isLangEn(request)) {
                     errorMessageId = jjValidation.isDigitMessageEn(id, "ID");
@@ -771,7 +832,7 @@ public class Product {
             }
             List<Map<String, Object>> row = jjDatabaseWeb.separateRow(db.Select(tableName, _id + "=" + id));
             if (row.size() == 0) {
-                String errorMessage = "رکوردی با این کد وجود ندارد.";
+                String errorMessage = "Ø±Ú©ÙˆØ±Ø¯ÛŒ Ø¨Ø§ Ø§ÛŒÙ† Ú©Ø¯ ÙˆØ¬ÙˆØ¯ Ù†Ø¯Ø§Ø±Ø¯.";
                 if (jjTools.isLangEn(request)) {
                     errorMessage = "Select Fail;";
                 }
@@ -814,7 +875,7 @@ public class Product {
     public static String add_ar(HttpServletRequest request, jjDatabaseWeb db, boolean isPost) throws Exception {
         try {
             String id = jjTools.getParameter(request, _id);
-            String errorMessageId = jjValidation.isDigitMessageFa(id, "کد");
+            String errorMessageId = jjValidation.isDigitMessageFa(id, "Ú©Ø¯");
             if (!errorMessageId.equals("")) {
                 if (jjTools.isLangEn(request)) {
                     errorMessageId = jjValidation.isDigitMessageEn(id, "ID");
@@ -823,7 +884,7 @@ public class Product {
             }
             List<Map<String, Object>> row = jjDatabaseWeb.separateRow(db.Select(tableName, _id + "=" + id));
             if (row.size() == 0) {
-                String errorMessage = "رکوردی با این کد وجود ندارد.";
+                String errorMessage = "Ø±Ú©ÙˆØ±Ø¯ÛŒ Ø¨Ø§ Ø§ÛŒÙ† Ú©Ø¯ ÙˆØ¬ÙˆØ¯ Ù†Ø¯Ø§Ø±Ø¯.";
                 if (jjTools.isLangEn(request)) {
                     errorMessage = "Select Fail;";
                 }
@@ -932,7 +993,7 @@ public class Product {
 //                    Category_product._parent + "=" + id + " AND " + Category_product._lang + "=3"));
 //
 //            html3.append("<span class='productLink'>");
-//            html3.append("أخبار");
+//            html3.append("Ø£Ø®Ø¨Ø§Ø±");
 //            html3.append("</span><span class='productLinkFlash'>&nbsp;>&nbsp;</span>");
 //            if (rowCategory.size() > 0) {
 //                html3.append("<a class='productLink' onclick='swGetProducts("
@@ -945,7 +1006,7 @@ public class Product {
 //                    if (db.Select(tableName, _category_id + "=" + categoryRow.get(i).get(Category_product._parent)).getRowCount() > 0) {
 //                        if (!rowCategory.get(0).get(Category_product._id).toString().equals(categoryRow.get(i).get(Category_product._id).toString())) {
 //                            counter2 += 1;
-//                            html3.append((counter2 == 1 ? "<span class='productLinkFlash'> أو </span>" : "<span class='productLinkFlash'>, </span>")
+//                            html3.append((counter2 == 1 ? "<span class='productLinkFlash'> Ø£Ùˆ </span>" : "<span class='productLinkFlash'>, </span>")
 //                                    + "<a  class='productLink' onclick='swGetProducts("
 //                                    + categoryRow.get(i).get(Category_product._parent) + ");' >"
 //                                    + categoryRow.get(i).get(Category_product._title) + "</a>");
