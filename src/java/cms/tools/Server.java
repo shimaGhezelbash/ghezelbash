@@ -2,7 +2,6 @@ package cms.tools;
 
 import cms.access.*;
 import cms.cms.*;
-import com.kavenegar.App;
 import java.io.*;
 import static java.lang.System.out;
 import java.lang.reflect.*;
@@ -36,7 +35,7 @@ public class Server extends HttpServlet {
             clazzes.add(Access_User.class);
             clazzes.add(Product.class);
             clazzes.add(jjDatabaseWeb.class);
-//            clazzes.add(App.class);
+//            clazzes.add(Sms.class);
         }
         return clazzes;
     }
@@ -60,7 +59,7 @@ public class Server extends HttpServlet {
 //            databaseName = jjTools.getSessionAttribute(request, "databaseName").equals("") ? databaseName : jjTools.getSessionAttribute(request, "databaseName");
 //            if(Action.equalsIgnoreCase("sendSMS")){
 //                String text=request.getParameter("smsText").toString();
-//                App.SendSMS(text);
+//                Sms.SendSMS(text);
 //            }
             int dot = Action.indexOf(".");
             if (dot > -1) {
