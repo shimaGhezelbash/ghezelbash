@@ -1,0 +1,447 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Demo Beautiful Registration Form with HTML5 and CSS3</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7; IE=EmulateIE9">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" type="text/css" href="style.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="demo.css" media="all" />
+</head>
+<body>
+<div class="container">
+			
+            <div class="">
+     
+                <div class="clr"></div>
+            </div>
+
+			<header>
+				<h1><span></span><br />فرم دموگرافيک دانشجويی بر مبنای html5 و css3</h1>
+            </header>       
+      <div  class="form">
+          <form id="contactform" method="POST" action="Server">
+              <input type="hidden" name="id" id="id" value="" />
+                <table>
+
+                    <tr>
+                        <td>
+                            <label class="ltr">نام : </label>
+                        </td>
+                        <td>
+                            <input id="std_info_name" type="text" value=""  name="std_info_name"  class="fit" />
+                        </td>
+                        <td>
+                            <label class="ltr">نام خانوادگی : </label>
+                        </td>
+                        <td>
+                            <input type="text" value=" باقرنيا" readonly="readonly"  class="fit" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label class="ltr">نام پدر : </label>
+                        </td>
+                        <td>
+                            <input type="text" value=" حسينعلی" readonly="readonly"  class="fit" />
+                        </td>
+                        <td>
+                            <label class="ltr" id="idNumber">شماره شناسنامه : </label>
+                        </td>
+                        <td>
+                            <input type="text" value=" 1271703092" readonly="readonly"  class="fit" />
+                        </td>
+                    </tr>
+                    
+                   
+
+                    <tr>
+                        <td>
+                            <label class="ltr">تاريخ تولد : </label>
+                        </td>
+                        <td>
+                            <input type="text" value=" 1373/03/10" readonly="readonly"  class="fit" />
+                        </td>
+                        <td>
+                            <label class="ltr">کد ملی : </label>
+                        </td>
+                        <td>
+                            <input type="text" value=" 1271703092" readonly="readonly" class="fit"/>
+                        </td>
+                        </tr>
+
+                    <tr>
+                        <td>
+                            <label>دانشکده : </label>
+                        </td>
+                        <td>
+                            <select class="select-style" name="college">
+                  <option value="">کامپيوتر</option>
+                  <option value="1">ادبيات</option>
+                  <option value="2">اقتصاد</option>
+                  <option value="3">آمار</option>
+                  <option value="4" >پزشکی</option>
+                  <option value="5">تربيت بدنی</option>
+                  <option value="6">رياضی</option>
+                  <option value="7">زبان</option>
+                  <option value="8">زيست شناسی</option>
+                  <option value="9">شيمی</option>
+                  <option value="10">علوم پايه</option>
+                  <option value="11">فيزيک</option>
+                  <option value="12">هنر</option>
+                 </select>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                            <input type="text" value=" کامپيوتر" readonly="readonly"  class="fit" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>رشته تحصيلی : </label>
+                        </td>
+                        <td>
+                            <select class="select-style" name="course">
+                  <option value="">نرم‌افزار</option>
+                  <option value="1">ادبيات</option>
+                  <option value="2">اقتصاد</option>
+                  <option value="3">آمار</option>
+                  <option value="4" >پزشکی</option>
+                  <option value="5">تربيت بدنی</option>
+                  <option value="6">رياضی</option>
+                  <option value="7">زبان</option>
+                  <option value="8">زيست شناسی</option>
+                  <option value="9">شيمی</option>
+                  <option value="10">علوم پايه</option>
+                  <option value="11">فيزيک</option>
+                  <option value="12">هنر</option>
+                 </select>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                            <input type="text" value=" نرم‌افزار" readonly="readonly"  class="fit" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>مقطع تحصيلی : </label>
+                        </td>
+                        <td>
+                            <select class="select-style">
+                  <option value="">کارشناسی</option>
+                  <option value="1">کارشناسی ارشد</option>
+                  <option value="2">دکتری تخصصی</option>
+                  <option value="3">دکتری عمومی</option>
+                  <option value="4">فوق تخصص</option>
+                  <option value="5">فلوشيپ</option>
+                 </select>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                            <input type="text" value=" کارشناسی" readonly="readonly"  class="fit" />
+                        </td>
+                        </tr>
+
+                    <tr>
+                        <td>
+                            <label>جنسيت : </label>
+                        </td>
+                        <td>
+                            <label class="gender">زن <input type="radio" name="gender" value="Male" /></label>
+                            
+                            <label class="gender">مرد <input type="radio" name="gender" value="Female" /></label>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <label>وضعيت تأهل : </label>
+                        </td>
+                        <td>
+                            <select class="select-style">
+                  <option value="">مجرد</option>
+                  <option value="1">متأهل</option>
+                  <option value="2">مطلقه</option>
+                  <option value="3">بيوه</option>
+                 </select>
+                        </td>
+                        </tr>
+
+                    <tr>
+                        <td>
+                            <label class="ltr">شهر محل صدور شناسنامه : </label>
+                        </td>
+                        <td>
+                            <input type="text" value=" اصفهان" readonly="readonly"  class="fit" />
+                        </td>
+                        <td>
+                            <label class="ltr">شهر محل زندگی : </label>
+                        </td>
+                        <td>
+                            <input type="text" placeholder=" اصفهان" required=""/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>سهميه قبولی : </label>
+                        </td>
+                        <td>
+                            <select class="select-style">
+                  <option value="">آزاد</option>
+                  <option value="1">آزادگان</option>
+                  <option value="2">رزمندگان</option>
+                  <option value="3">شاهد</option>
+                  <option value="4">کارکنان</option>
+                  <option value="5">مربیان</option>
+                  <option value="6">منطقه يک</option>
+                  <option value="7">منطقه دو</option>
+                  <option value="8">منطقه سه</option>
+                 </select>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                            <input type="text" value=" منطقه يک" readonly="readonly"  class="fit" />
+                        </td>
+                        </tr>
+
+                    <tr>
+                        <td>
+                            <label class="ltr">معدل ديپلم : </label>
+                        </td>
+                        <td>
+                            <input type="text" value=" 18.98"/>
+                        </td>
+                        <td>
+                            <label class="ltr">معدل کل ترم : <br />در صورتيکه دانشجوی<br /> جدید الورود هستید <br /> صفر وارد کنید</label>
+                        </td>
+                        <td>
+                            <input type="text" placeholder="" required=""/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>میزان آشنایی به زبان انگلیسی  : </label>
+                        </td>
+                        <td>
+                            <label class="gender">خوب <br /><input type="radio" name="gender2" value="Male" /></label>
+                            <label class="gender">متوسط <input type="radio" name="gender2" value="Female" /></label>
+                            <label class="gender">ضعيف <input type="radio" name="gender2" value="Female" /></label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>میزان تحصیلات پدر : </label>
+                        </td>
+                        <td>
+                            <select class="select-style">
+                  <option value="">بی‌سواد</option>
+                  <option value="1">زیر دیپلم</option>
+                  <option value="2">دیپلم</option>
+                  <option value="3">کارشناسی</option>
+                  <option value="4">کارشناسی ارشد</option>
+                  <option value="5">دکتری</option>
+                  <option value="6">پزشک</option>
+                  <option value="7">دندانپزشک</option>
+                  <option value="8">داروساز</option>
+                 </select>
+                        </td>
+                        <td>
+                            <label>میزان تحصیلات مادر : </label>
+                        </td>
+                        <td>
+                            <select class="select-style">
+                  <option>بی‌سواد</option>
+                  <option>زیر دیپلم</option>
+                  <option>دیپلم</option>
+                  <option>کارشناسی</option>
+                  <option>کارشناسی ارشد</option>
+                  <option>دکتری</option>
+                  <option>پزشک</option>
+                  <option>دندانپزشک</option>
+                  <option>داروساز</option>
+                 </select>
+                        </td>
+                        </tr>
+
+                    <tr>
+                        <td>
+                            <label>شغل پدر : </label>
+                        </td>
+                        <td>
+                            <select class="select-style">
+                  <option>فرهنگی</option>
+                  <option>هیات علمی</option>
+                  <option>کارمند دولتی</option>
+                  <option>کارمند خصوصی</option>
+                  <option>آزاد</option>
+                  <option>مدیریتی</option>
+                  <option>پزشک</option>
+                  <option>دندانپزشک</option>
+                  <option>داروساز</option>
+                  <option>خدمات پزشکی</option>
+                  <option>مدیر شرکت</option>
+                  <option>مدیر کارخانجات</option>
+                 </select>
+                        </td>
+                        <td>
+                            <label>شغل مادر : </label>
+                        </td>
+                        <td>
+                            <select class="select-style">
+                  <option>فرهنگی</option>
+                  <option>هیات علمی</option>
+                  <option>کارمند دولتی</option>
+                  <option>کارمند خصوصی</option>
+                  <option>آزاد</option>
+                  <option>مدیریتی</option>
+                  <option>پزشک</option>
+                  <option>دندانپزشک</option>
+                  <option>داروساز</option>
+                  <option>خدمات پزشکی</option>
+                  <option>مدیر شرکت</option>
+                  <option>مدیر کارخانجات</option>
+                  <option>خانه دار</option>
+                 </select>
+                        </td>
+                        </tr>
+
+                    <tr>
+                        <td>
+                            <label>تعداد اعضای خانواده : </label>
+                        </td>
+                        <td>
+                            <select class="select-style">
+                  <option>يک نفر</option>
+                  <option>دو نفر</option>
+                  <option>سه نفر</option>
+                  <option>چهار نفر</option>
+                  <option>پنج نفر و يا بيشتر</option>
+                 </select>
+                        </td>
+                        <td>
+                            <label>با چه کسانی زندگی می‌کنيد : </label>
+                        </td>
+                        <td>
+                            <select class="select-style">
+                  <option>والدين</option>
+                  <option>يکی از والدين</option>
+                  <option>خواهر و برادر</option>
+                  <option>همسر</option>
+                  <option>بستگان</option>
+                  <option>ساير</option>
+                 </select>
+                        </td>
+                        </tr>
+
+                    <tr>
+                        <td>
+                            <label>وضعيت مسکن فردی : </label>
+                        </td>
+                        <td>
+                            <select class="select-style">
+                  <option>خوابگاه</option>
+                  <option>خانه دانشجويی</option>
+                  <option>منزل</option>
+                  <option>ساير</option>
+                 </select>
+                        </td>
+                        <td>
+                            <label>وضعيت مسکن خانواده : </label>
+                        </td>
+                        <td>
+                            <select class="select-style">
+                  <option>شخصی</option>
+                  <option>استيجاری</option>
+                 </select>
+                        </td>
+                        </tr>
+
+                     <tr>
+                        <td>
+                            <label>تحت پوشش بیمه می باشید : </label>
+                        </td>
+                        <td>
+                            <label class="gender">بله <input type="radio" name="gender3" value="Male" /></label>
+                            <label class="gender">خير <input type="radio" name="gender3" value="Female" /></label>
+                        </td>
+                         <td>
+                             <label>نام بیمه : </label>
+                         </td>
+                         <td>
+                             <select class="select-style">
+                  <option>بيمه سلامت</option>
+                  <option>بيمه تأمين اجتماعی</option>
+                  <option>بيمه نيروهای مصلح</option>
+                  <option>بیمه کمیته امداد</option>
+                  <option>بیمه‌های خصوصی </option>
+                 </select>
+                         </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>درآمد ماهیانه سرپرست خانواده  : </label>
+                        </td>
+                        <td>
+                            <select class="select-style">
+                  <option>زیر 10000000 ریال</option>
+                  <option>بین 10000000 تا 20000000 ریال</option>
+                  <option>بین 200000001 تا 40000000 ریال</option>
+                  <option>بین 40000001 تا 60000000 ریال</option>
+                  <option>بالای 60000000 ریال </option>
+                 </select>
+                        </td>
+                        <td>
+                            <label>وضعيت مسکن خانواده : </label>
+                        </td>
+                        <td>
+                            <select class="select-style">
+                  <option>شخصی</option>
+                  <option>استيجاری</option>
+                 </select>
+                        </td>
+                        </tr>
+
+                    <tr>
+                        <td>
+                            <label class="ltr">شماره تلفن ثابت : </label>
+                        </td>
+                        <td>
+                            <input type="text" value=""/>
+                        </td>
+                        <td>
+                            <label class="ltr">شماره تلفن همراه : </label>
+                        </td>
+                        <td>
+                            <input type="text" placeholder="" required=""/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>آدرس محل سکونت : </label>
+                        </td>
+                    </tr>
+
+                </table>
+
+
+                <textarea cols="70" rows="3" id="address"></textarea><br />
+            
+            <input class="buttom" name="do" id="submit" tabindex="5" value="StdInfo.update" type="submit"> 	 
+   </form> 
+</div>      
+</div>
+
+</body>
+</html>

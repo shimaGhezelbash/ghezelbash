@@ -1,0 +1,61 @@
+
+
+body {
+	margin:0;
+	padding:0;
+	height: 100%;
+    direction:rtl;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+
+header{
+	display: block;
+}
+
+body{
+    font-family:'B Nazanin', Tahoma;
+	font-family: serif;
+	background: #fff url(images/bgnoise_lg.png) repeat top left;
+	font-weight: 400;
+	font-size: 15px;
+	color: #3a2127;
+	overflow-y: scroll;
+}
+
+.container{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.clr{
+	clear: both;
+}
+.container > header{
+	padding: 20px 30px 20px 30px;
+	margin: 0px 20px 10px 20px;
+	position: relative;
+	display: block;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+    text-align: center;
+}
+.container > header h1{
+	position: relative;
+	color: #498ea5;
+	font-weight: 700;
+	font-style: normal;
+	font-size: 30px;
+	padding: 0px 0px 5px 0px;
+	text-shadow: 0px 1px 1px rgba(255,255,255,0.8);
+}
+.container > header h1 span{
+	font-family: 'Alegreya SC', Georgia, serif;
+	font-size: 30px;
+	line-height: 20px;
+	display: block;
+	font-weight: 400;
+	color: #719dab;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+}
